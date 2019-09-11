@@ -36,19 +36,25 @@ class MapComp extends React.Component {
       results.clearLayers();
       for (let i = data.results.length - 1; i >= 0; i--) {
         results.addLayer(L.marker(data.results[i].latlng));
-        
-        console.log(data.results[i].latlng);
+        localStorage.setItem("LATITUDE",data.results[i].latlng.lat);
+        localStorage.setItem("LONGITUDE",data.results[i].latlng.lng);
+       
+        // var a=localStorage.getItem("LATITUDE")
+        // 
+
+        // var b=localStorage.getItem("LONGITUDE")
+        // console.log(b);
       }
     });
   }
 
   render() {
-    const center = [37.7833, -122.4167];
+    const center = [13.0827, 80.2707];
     return (
       <Map
         style={{ height: "100vh" }}
         center={center}
-        zoom="10"
+        zoom="11"
         ref={m => {
           this.leafletMap = m;
         }}

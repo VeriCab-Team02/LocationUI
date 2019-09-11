@@ -1,6 +1,11 @@
+
 .App {
   text-align: center;
+  /* background-image: url("../src/cab1.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover; */
 }
+
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -31,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+#sticky-footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+}
+
+.text{
+  width: 360px;
+  margin-left: 400px;
+  text-shadow: #61dafb;
+  font-size: 180%;
+}
+
+.icon{
+  margin-left: 15px;
+}
+
+/* .JumbSize{
+  height: 40px;
+} */

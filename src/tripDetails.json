@@ -1,0 +1,13 @@
+{
+	"trip": {
+		"driverId": "166",
+		"passengerId": "2333",
+		"tripId": "4215",
+		"passengerName": "Rashmika",
+		"driverName": "sdss",
+		"sourceLocation": "chenai",
+		"dateAndTimeOfTrip": "asdasd",
+		"tripCompleted": "false",
+		"fare": "456"
+	}
+}

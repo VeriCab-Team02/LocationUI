@@ -1,9 +1,4 @@
 
-
-.drivertrip_wrapper{
-
-}
-
 .bullet {
     /* height: 10px;
     width: 10px; */
@@ -14,4 +9,29 @@
 .driver{
     text-align: left;
     margin-left: 10px; 
+}
+
+/* .MapSize{
+  height: 300px;
+  width: 300px;
+} */
+
+.cardSize {
+  width: 50px;
+}
+
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 96%;                
+
+  height: 1px;
+}
+
+
+#line {
+  float: left;
+  width: 731px;
+  height: 40px;                
 }

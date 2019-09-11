@@ -1,3 +1,5 @@
+@import '../../node_modules/bootstrap/dist/css/bootstrap.css';
+
 .RidesStyle{
     text-align: left;
     margin-left: 150px;
@@ -6,7 +8,7 @@
 
 
 .cardStyle {
-    width: 60%;
+    width: 40%;
     margin-left: auto;
     margin-right: auto;
     
@@ -27,7 +29,8 @@
 
 .PassengerInfoStyle {
     color: darkblue;
-    font-family: Verdana, Geneva, Tahoma, sans-serif
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center; 
 }
 
 .FareInfoStyle {
@@ -46,6 +49,8 @@
     background-color: green;
     border-radius: 50%;
     /* display: inline-block; */
+    margin-top: 8px;
+    margin-right: 5px;
   }
 
   .dot2 {
@@ -54,4 +59,6 @@
     background-color: red;
     border-radius: 50%;
     /* display: inline-block; */
+    margin-top: 8px;
+    margin-right: 5px;
   }

@@ -1,8 +1,13 @@
+
 import React from 'react';
 import './DriverTrip.css';    
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'bootstrap/dist/js/bootstrap';
 import {Map, GoogleApiWrapper} from 'google-maps-react';
+import MapComp from '../MapComp/MapComp.react';
+import LeafletMap from '../LeafletMap/LeafletMap.react';
+import MapSearch from '../MapSearch/MapSearch.react';
+import {Link} from 'react-router-dom';
 
 const mapStyles = {
   width: '60%',
@@ -13,9 +18,10 @@ const mapStyles = {
 class DriverTrip extends React.Component {
     constructor(props) {
         super(props);
-        this.setState = {
+        this.state = {
                 dateInfo : new Date()
-                     }
+            }
+           
     }
 
     handleStartTrip = () => {
@@ -28,7 +34,7 @@ class DriverTrip extends React.Component {
         let year = date_ob.getFullYear();
         let currentDate = date + "/" + month + "/" + year;
        
-        console.log(currentDate);
+        //console.log(currentDate);
 
         //TO get current Time
         // current hours
@@ -37,7 +43,7 @@ class DriverTrip extends React.Component {
         // current minutes
         let minutes = date_ob.getMinutes();
         let currentTime = hours + ":" + minutes;
-        console.log(currentTime);
+        //console.log(currentTime);
         
         //To Get Current Location
         // this.setState({dateInfo : currentDate});
@@ -50,41 +56,37 @@ class DriverTrip extends React.Component {
         return (
             <div className='drivertrip_wrapper'>
 
-                    <div>
-                    <p className="driver">Driver Name </p>
-                    <p >Trip Details</p>
-                    </div> 
-                    < hr />
-
-                    <div>
-                        <ul>
-                            <li className="bullet">Anna Nagar</li>
-                            <li className="bullet">Sathyam</li>
-                        </ul>
-
+                    <div className="MapSize">
+                    <h3 style={{color:'white'}}>Trip Details
                     <hr/>
-
-                    Display Map 
-                    <div>
-                    <Map
-                        google={this.props.google}
-                        zoom={8}
-                        style={mapStyles}
-                        initialCenter={{lat:47.444, lng:122.176}}
-                    />
-                    </div>
-                    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> <br /><br /><br /> <br /><br /><br /> <br /><br /><br /> 
-
-                    <hr/>
-                    </div>
-                   
-                    {/* user and trip information will be displayed here
-                    Username
-                    phone number 
-                    */}
-                    <input type="submit" value="Start Trip" onClick={this.handleStartTrip} />
+                    </h3>
                     
+                    
+                    
+                    {/* <LeafletMap/>  */}
+                    <div className="container">
+                    
+                        <div className="row">
+                            <div className="col-lg-6">
+                                <h5 style={{color:'white'}}>Source: Your current location is taken automatically</h5>
+                                 <MapSearch></MapSearch>
+                            </div>
+
+                            <div className="col-lg-6">
+                            <h5 style={{color:'white'}}>Destination: Please enter in the search box</h5>
+                            <MapComp ></MapComp>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <br/>
+                    <Link to="/viewRoute"><input type="submit" value="Start Trip" className="btn btn-primary"  onClick={this.handleStartTrip} /></Link> 
+
+                    <hr/>
+                 
+                  
             </div>
+            
         
         );
     }
